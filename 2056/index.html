@@ -7,9 +7,9 @@
 	<title>Fonds de plan ASIT Vector Tiles en EPSG:2056</title>
 
 	<!-- OpenLayers -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@9.2.4/ol.css" />
-	<script src="https://cdn.jsdelivr.net/npm/ol@9.2.4/dist/ol.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@12.3.5/dist/olms.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.10.0/ol.css" />
+	<script src="https://cdn.jsdelivr.net/npm/ol@10.10.0/dist/ol.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@12.4/dist/olms.js"></script>
 
 	<!-- proj4 for EPSG:2056 -->
 	<script src="https://cdn.jsdelivr.net/npm/proj4@2.11.0/dist/proj4.min.js"></script>
@@ -19,7 +19,37 @@
 
 <body>
 	<div id="map"></div>
-	<script src="map.js"></script>
+
+	<!-- Basemap Switcher -->
+	<div class="basemap-switcher" id="basemapSwitcher">
+		<div class="basemap-option active" data-style="https://vt.asit-asso.ch/styles/2056/asit.color/style.json"
+			data-tiles-url="https://vt.asit-asso.ch/tiles/asit/v0.1/2056/{z}/{x}/{y}.mvt">
+			<img src="../thumbnail/couleur.png" alt="Couleur" />
+			<span>Couleur</span>
+		</div>
+		<div class="basemap-option" data-style="https://vt.asit-asso.ch/styles/2056/asit.light/style.json"
+			data-tiles-url="https://vt.asit-asso.ch/tiles/asit/v0.1/2056/{z}/{x}/{y}.mvt">
+			<img src="../thumbnail/light.png" alt="Clair" />
+			<span>Clair</span>
+		</div>
+		<div class="basemap-option" data-style="https://vt.asit-asso.ch/styles/2056/asit.dark/style.json"
+			data-tiles-url="https://vt.asit-asso.ch/tiles/asit/v0.1/2056/{z}/{x}/{y}.mvt">
+			<img src="../thumbnail/dark.png" alt="Sombre" />
+			<span>Sombre</span>
+		</div>
+		<div class="basemap-option" data-style="https://vt.asit-asso.ch/styles/2056/asit.hybrid/style.json"
+			data-tiles-url="https://vt.asit-asso.ch/tiles/asit/v0.1/2056/{z}/{x}/{y}.mvt">
+			<img src="../thumbnail/hybrid.png" alt="Hybride" />
+			<span>Hybride</span>
+		</div>
+		<div class="basemap-option" data-style="https://vt.asit-asso.ch/styles/2056/asit.cadastral/style.json"
+			data-tiles-url="https://vt.asit-asso.ch/tiles/asit/v0.1/2056/{z}/{x}/{y}.mvt">
+			<img src="../thumbnail/cadastral.png" alt="Cadastral" />
+			<span>Cadastral</span>
+		</div>
+	</div>
+
+	<script src="map.js" type="module"></script>
 </body>
 
 </html>
